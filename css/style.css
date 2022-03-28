@@ -484,6 +484,7 @@ body {
   border: none;
 }
 .pag__list {
+  list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -519,7 +520,7 @@ body {
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  background-color:#111827;
+  background-color:#4375e0;
   color: #fff;
   padding: 18px;
   margin: 18px;
@@ -539,7 +540,7 @@ body {
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  background-color:#111827;
+  background-color:#4375e0;
   color: #fff;
   padding: 18px;
   margin: 10px 18px;
