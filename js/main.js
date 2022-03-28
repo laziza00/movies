@@ -597,11 +597,6 @@ setupPagination(list__items, pagination_element, rows)
 
 
 
-
-
-
-
-
 // =====================input search==================
 
 let inputSearch = document.querySelector('#inputsearch')
