@@ -386,213 +386,212 @@ function videoInter() {
 
 
 
-const list__items = [
+// const list__items = [
 
-  "item 1",
-  "item 2",
-  "item 3",
-  "item 4",
-  "item 5",
-  "item 6",
-  "item 7",
-  "item 8",
-  "item 9",
-  "item 10",
-  "item 11",
-  "item 12",
-  "item 13",
-  "item 14",
-  "item 15",
-  "item 16",
-  "item 17",
-  "item 18",
-  "item 19",
-  "item 20",
-  "item 21",
-  "item 22",
-];
-
-
-const list_element = document.querySelector('#alllist')
-const pagination_element= document.querySelector('#paglist')
+//   "item 1",
+//   "item 2",
+//   "item 3",
+//   "item 4",
+//   "item 5",
+//   "item 6",
+//   "item 7",
+//   "item 8",
+//   "item 9",
+//   "item 10",
+//   "item 11",
+//   "item 12",
+//   "item 13",
+//   "item 14",
+//   "item 15",
+//   "item 16",
+//   "item 17",
+//   "item 18",
+//   "item 19",
+//   "item 20",
+//   "item 21",
+//   "item 22",
+// ];
 
 
-let current_page =1;
-let rows =5;
+// const list_element = document.querySelector('#alllist')
+// const pagination_element= document.querySelector('#paglist')
 
-function displayList (items, wrapper, rows_per_page, page){
-  wrapper.innerHTML ="";
-  page--;
 
-  let start =rows_per_page *page;
-  let end = start +rows_per_page
-  let paginatedItems = items.slice(start, end)
+// let current_page =1;
+// let rows =5;
+
+// function displayList (items, wrapper, rows_per_page, page){
+//   wrapper.innerHTML ="";
+//   page--;
+
+//   let start =rows_per_page *page;
+//   let end = start +rows_per_page
+//   let paginatedItems = items.slice(start, end)
 
   
-  for(let i=0; i<paginatedItems.length; i++){
-    let item = paginatedItems[i];
-    let item_element = document.createElement('li');
-    item_element.classList.add('item');
-    item_element.innerText = item;
+//   for(let i=0; i<paginatedItems.length; i++){
+//     let item = paginatedItems[i];
+//     let item_element = document.createElement('li');
+//     item_element.classList.add('item');
+//     item_element.innerText = item;
 
-    wrapper.appendChild(item_element)
-  }
+//     wrapper.appendChild(item_element)
+//   }
 
-}
-
-
-function setupPagination(items, wrapper, rows_per_page) {
-  wrapper.innerHTML ="";
+// }
 
 
-  let page_count = Math.ceil(items.length/rows_per_page)
-
-  for(let i=1; i<page_count+1; i++) {
-    let btn = paginationButton(i, items)
-    wrapper.appendChild(btn)
-
-  }
-}
-
-function paginationButton(page, items) {
-  let button = document.createElement('button');
-  button.innerText = page;
+// function setupPagination(items, wrapper, rows_per_page) {
+//   wrapper.innerHTML ="";
 
 
-  if(current_page ==page) button.classList.add('active');
-    button.addEventListener('click', function(){
-      current_page=page;
-      displayList(items, list_element, rows, current_page);
+//   let page_count = Math.ceil(items.length/rows_per_page)
 
-      let current_btn =document.querySelector('.pag__list button.active');
-      current_btn.classList.remove('active')
+//   for(let i=1; i<page_count+1; i++) {
+//     let btn = paginationButton(i, items)
+//     wrapper.appendChild(btn)
+
+//   }
+// }
+
+// function paginationButton(page, items) {
+//   let button = document.createElement('button');
+//   button.innerText = page;
+
+
+//   if(current_page ==page) button.classList.add('active');
+//     button.addEventListener('click', function(){
+//       current_page=page;
+//       displayList(items, list_element, rows, current_page);
+
+//       let current_btn =document.querySelector('.pag__list button.active');
+//       current_btn.classList.remove('active')
     
-      button.classList.add('active')
-    })
-    return button
+//       button.classList.add('active')
+//     })
+//     return button
+// }
+
+
+
+// displayList(list__items, list_element,rows, current_page )
+// setupPagination(list__items, pagination_element, rows)
+
+
+
+
+
+
+
+
+
+
+let allList = document.querySelector('#alllist')
+let pagList = document.querySelector('#paglist')
+let allPages = 15
+
+function elem(allPages, page) {
+
+  let li ='';
+
+  let beforePages = page-1;
+  let afterPages = page +1 
+  let liActive;
+
+
+
+if(page >1) {
+    li+= `
+    <li class=" pag__icon  pag__btn" style="border-radius: 50%;" onclick ="elem(allPages, ${page-1})" data-name="prevbtn">
+    <i class='bx bx-chevron-left' ></i>
+  </li>`
 }
 
+for (let pageLength = beforePages; pageLength<=afterPages; pageLength++){
 
+    if(pageLength>allPages) {
+      continue;
+    }
+    if(pageLength==0) {
+      pageLength=pageLength+1
+    }
+    if(page==pageLength) {
+      liActive = 'active'
+    }else {
+      liActive = ''
+    }
 
-displayList(list__items, list_element,rows, current_page )
-setupPagination(list__items, pagination_element, rows)
+  li+= `<li class="pag__numb  ${liActive}" onclick ="elem(allPages, ${pageLength})" data-name="two">
+  <span> ${pageLength}</span>
+ </li>
+  `
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-// let allPages = 15
-
-// function elem(allPages, page) {
-
-//   let li ='';
-
-//   let beforePages = page-1;
-//   let afterPages = page +1 
-//   let liActive;
-
-
-
-// if(page >1) {
-//     li+= `
-//     <li class=" pag__icon  pag__btn" style="border-radius: 50%;" onclick ="elem(allPages, ${page-1})" data-name="prevbtn">
-//     <i class='bx bx-chevron-left' ></i>
-//   </li>`
-// }
-
-// for (let pageLength = beforePages; pageLength<=afterPages; pageLength++){
-
-//     if(pageLength>allPages) {
-//       continue;
-//     }
-//     if(pageLength==0) {
-//       pageLength=pageLength+1
-//     }
-//     if(page==pageLength) {
-//       liActive = 'active'
-//     }else {
-//       liActive = ''
-//     }
-
-//   li+= `<li class="pag__numb  ${liActive}" onclick ="elem(allPages, ${pageLength})" data-name="two">
-//   <span> ${pageLength}</span>
-//  </li>
-//   `
-
-// }
-
-//     if(page < allPages) {
-//       li += `  <li class="pag__icon  pag__btn" onclick ="elem(allPages, ${page+1})"style="border-radius: 50%;" id="nextbtn" data-name="nextbtn">
-//       <i class='bx bx-chevron-right'></i>
-//     </li>`
-//     }
-//   pagList.innerHTML = li
-// }
-// elem(allPages,2)
+    if(page < allPages) {
+      li += `  <li class="pag__icon  pag__btn" onclick ="elem(allPages, ${page+1})"style="border-radius: 50%;" id="nextbtn" data-name="nextbtn">
+      <i class='bx bx-chevron-right'></i>
+    </li>`
+    }
+  pagList.innerHTML = li
+}
+elem(allPages,2)
 
 
 
-// newMovies =[]
-// nextBtn =document.querySelector('#nextbtn');
+newMovies =[]
+nextBtn =document.querySelector('#nextbtn');
 
-// nextBtn.addEventListener('click', () => {
-//   WorkNextBtn();
-// })
+nextBtn.addEventListener('click', () => {
+  WorkNextBtn();
+})
 
 
-// function WorkNextBtn () {
+function WorkNextBtn () {
   
-//   newMovies= movies.filter((item, index) =>{
-//     if(index>=32 && index<64){
-//       return index
-//     }
-//   })
-//   allList.innerHTML =''
-// for(let i=0; i<newMovies.length; i++) {
-//   let li =document.createElement('li');
-//   li.className= "feature__item";
-//   li.style.margin ="0 20px 20px"
-//   li.innerHTML =
-//   `
-//         <img class="feature__img"src="${movies[i].youtubePoster}" alt="img">
-//         <div style="display: flex;">
-//           <p class="feature__country">USA</p>
-//           <p class="feature__year feature__country">${movies[i].year}</p>
-//         </div>
+  newMovies= movies.filter((item, index) =>{
+    if(index>=32 && index<64){
+      return index
+    }
+  })
+  allList.innerHTML =''
+for(let i=0; i<newMovies.length; i++) {
+  let li =document.createElement('li');
+  li.className= "feature__item";
+  li.style.margin ="0 20px 20px"
+  li.innerHTML =
+  `
+        <img class="feature__img"src="${movies[i].youtubePoster}" alt="img">
+        <div style="display: flex;">
+          <p class="feature__country">USA</p>
+          <p class="feature__year feature__country">${movies[i].year}</p>
+        </div>
 
-//         <h3 class="feature__item-title" id="title">${movies[i].title}</h3>
-//         <div style="display: flex; justify-content: space-between; align-items: center; margin: 0 0 12px 0;">
-//           <div style="display: flex; align-items: center;">
-//             <img class="feature__img-img" src="images/imd-img.png" alt="img">
-//             <p class="feature__number">86/100</p>
-//           </div>
+        <h3 class="feature__item-title" id="title">${movies[i].title}</h3>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin: 0 0 12px 0;">
+          <div style="display: flex; align-items: center;">
+            <img class="feature__img-img" src="images/imd-img.png" alt="img">
+            <p class="feature__number">86/100</p>
+          </div>
 
-//           <div style="display: flex; align-items: center;">
-//           <i class='bx bxs-star'></i>
-//           <p class="feature__percent">97%</p>
-//         </div>
-//         </div>
-//         <div style="display: flex;">
-//           <p class="feature__category" id="feature__category">${movies[i].categories},</p>
-//         </div>
-//         <button class="feature__item-btn feature__btn" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal('${movies[i].imdbId}')">See more <i class='bx bxs-chevron-right'></i></button>
-//         <button class="feature__heart-btn" id="heart__btn" onclick="AddHeartModal('${movies[i].imdbId}')">
-//         <i class='bx bxs-heart' ></i>
-//       </button>
-//     `
-//     allList.appendChild(li)
-//     console.log(li);
-// }
+          <div style="display: flex; align-items: center;">
+          <i class='bx bxs-star'></i>
+          <p class="feature__percent">97%</p>
+        </div>
+        </div>
+        <div style="display: flex;">
+          <p class="feature__category" id="feature__category">${movies[i].categories},</p>
+        </div>
+        <button class="feature__item-btn feature__btn" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal('${movies[i].imdbId}')">See more <i class='bx bxs-chevron-right'></i></button>
+        <button class="feature__heart-btn" id="heart__btn" onclick="AddHeartModal('${movies[i].imdbId}')">
+        <i class='bx bxs-heart' ></i>
+      </button>
+    `
+    allList.appendChild(li)
+    console.log(li);
+}
 
-// }
+}
 
 
 
