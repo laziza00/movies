@@ -487,8 +487,10 @@ body {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
+  background-color: rgb(83, 216, 216);
   justify-content: space-between;
   align-items: center;
+  border-radius: 30px;
 }
 .pag__list button{
   width: 50px;
@@ -497,7 +499,7 @@ body {
   border: none;
   cursor: pointer;
   outline: none;
-  background-color: rgb(61, 188, 219);
+  background-color: rgb(17, 25, 27);
   margin: 5px;
   color: #fff;
   transition: 0.4s;
@@ -520,7 +522,7 @@ body {
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  background-color:#4375e0;
+  background-color:#292d35;
   color: #fff;
   padding: 18px;
   margin: 18px;
@@ -540,7 +542,7 @@ body {
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  background-color:#4375e0;
+  background-color:#292d35;
   color: #fff;
   padding: 18px;
   margin: 10px 18px;
