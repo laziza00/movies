@@ -66,10 +66,10 @@ function filterSearch (e) {
   featureNewList.appendChild(li)
     }
     
-      // searchMovie.value =""
-      // formCategory.value ="All"
-      // searchStart.value=""
-      // searchEnd.value=""
+      searchMovie.value =""
+      formCategory.value ="All"
+      searchStart.value=""
+      searchEnd.value=""
   }
 
 }
