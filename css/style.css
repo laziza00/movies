@@ -559,16 +559,6 @@ body {
   transition: all 0.3s ease;
 }
 
-.pag__icon {
-  align-items: center;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-.pag__icon:hover {
-  transition: all 0.3s ease;
-  color: #3c3f44;
-  background-color:#fff;
-}
 .active {
   background-color: #fff;
   color: #000;
