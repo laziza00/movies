@@ -222,7 +222,7 @@ let modalbody= document.querySelector('#modalbody')
 
 
 function openModal(e) {
-  for(let i=0; i<=10; i++) {
+  for(let i=0; i<=movies.length; i++) {
     if(movies[i].imdbId==e) {
       let a = movies[i];
       
