@@ -65,10 +65,11 @@ function filterSearch (e) {
   </button>`
   featureNewList.appendChild(li)
     }
-      searchMovie.value =""
-      formCategory.value ="All"
-      searchStart.value=""
-      searchEnd.value=""
+    
+      // searchMovie.value =""
+      // formCategory.value ="All"
+      // searchStart.value=""
+      // searchEnd.value=""
   }
 
 }
