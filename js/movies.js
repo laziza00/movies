@@ -146,12 +146,12 @@ function elem(allPages, page) {
 
 
 
-if(page >1) {
-    li+= `
-    <li class=" pag__icon  pag__btn" style="border-radius: 50%;" onclick ="elem(allPages, ${page-1})" data-name="prevbtn">
-    <i class='bx bx-chevron-left' ></i>
-  </li>`
-}
+// if(page >1) {
+//     li+= `
+//     <li class=" pag__icon  pag__btn" style="border-radius: 50%;" onclick ="elem(allPages, ${page-1})" data-name="prevbtn">
+//     <i class='bx bx-chevron-left' ></i>
+//   </li>`
+// }
 
 for (let pageLength = beforePages; pageLength<=afterPages; pageLength++){
 
@@ -174,17 +174,15 @@ for (let pageLength = beforePages; pageLength<=afterPages; pageLength++){
 
 }
 
-    if(page < allPages) {
-      li += `  <li class="pag__icon  pag__btn" onclick ="elem(allPages, ${page+1})"style="border-radius: 50%;" id="nextbtn" data-name="nextbtn">
-      <i class='bx bx-chevron-right'></i>
-    </li>`
-    }
+    // if(page < allPages) {
+    //   li += `  <li class="pag__icon  pag__btn" onclick ="elem(allPages, ${page+1})"style="border-radius: 50%;" id="nextbtn" data-name="nextbtn">
+    //   <i class='bx bx-chevron-right'></i>
+    // </li>`
+    // }
   pagList.innerHTML = li
 }
 elem(allPages,1)
 
-
-let pabBtn = document.querySelector('.pag__numb');
 
 pagList.addEventListener('click', (e)=> {
 
@@ -192,10 +190,6 @@ pagList.addEventListener('click', (e)=> {
     paginationFor(a)
 })
 
-nextBtnPag.addEventListener('click', (e)=>{
-    page = page+1;
-    paginationFor(page)   
-})
 
 let page =1;
 
@@ -205,9 +199,8 @@ function render(movies) {
     for(let i=0; i<32; i++) {
         let li=document.createElement('li');
         li.className ="feature__item"
-        // li.style.margin="0 30px 20px"
-        li.innerHTML = `
-        
+        li.innerHTML = 
+        `
       <img class="feature__img"src="${movies[i].youtubePoster}" alt="img">
       <div style="display: flex;">
         <p class="feature__country">USA</p>
@@ -239,7 +232,6 @@ function render(movies) {
 render(movies);
 
 function paginationFor(page) {
-    console.log(page);
 
     let pagArr =[]
 
