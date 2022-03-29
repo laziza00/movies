@@ -5,7 +5,7 @@ let seeMoadlBtn = document.querySelectorAll('.feature__item-btn')
 
 // ==================feature list write===============
 
-for (let i=0; i<=200; i++) {
+for (let i=0; i<=10; i++) {
     let li = document.createElement('li');
     li.className="feature__item";
     li.innerHTML =`
@@ -50,17 +50,19 @@ let rightBtn = document.querySelector('#right')
 let itemCard = document.querySelectorAll('#featurelist li')
 
 let idx =0;
+let result;
+let itemLength= itemCard.length
 
 function featureSlider() {
     if(idx > itemCard.length-4){
         idx = 0;
     }
-    else if(idx < 0){
+    else if(idx < 0) {
         idx = itemCard-4
     }
+
     moviesList.style.transform =`translateX(${-idx*320}px)`
 }
-
 rightBtn.addEventListener('click', ()=> {
     idx++;
     resetInter();
@@ -260,7 +262,7 @@ function openModal(e) {
 
 let videoList = document.querySelector('#videolist')
 
-for (let k=12; k<=220; k++) {
+for (let k=12; k<=22; k++) {
   let li = document.createElement('li');
   li.className="video__item";
   li.innerHTML =`
@@ -312,9 +314,6 @@ function videoInter() {
     clearInterval(videoInterval);
     videoInterval = setInterval(videoRun, 3000)
 }
-
-
-
 
 
 

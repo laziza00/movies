@@ -281,14 +281,14 @@ body {
 }
 .left {
   position: absolute;
-  top: 50%;
-  left: 40px;
+  top: 25%;
+  left: 0;
   z-index: 100;
 }
 .right {
   position: absolute;
-  top: 50%;
-  right: 40px;
+  top: 25%;
+  right: 0;
   z-index: 100;
 }
 .feature__heart-btn {
@@ -369,17 +369,16 @@ body {
 .video__btn:hover {
   color: blue;
 }
-
 .videoleft {
   position: absolute;
   top: 35%;
-  left: 40px;
+  left: 80px;
   transition: all 0.4s ease;
 }
 .videoright {
   position: absolute;
   top: 35%;
-  right: 40px;
+  right: 80px;
   transition: all 0.4s ease;
 }
 
@@ -387,6 +386,8 @@ body {
 
 
 /*============ offcanvas=============== */
+
+
 .offcanvas__my-title {
   font-size: 25px;
   color: #111827;
@@ -480,7 +481,6 @@ body {
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: space-between;
   list-style-type: none;
   flex-wrap: wrap;
 }
@@ -489,10 +489,10 @@ body {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
-  background-color: rgb(83, 216, 216);
+  background-color: rgb(197, 206, 206);
   justify-content: space-between;
   align-items: center;
-  border-radius: 30px;
+  border-radius: 50px;
 }
 .pag__list button{
   width: 50px;
@@ -501,17 +501,17 @@ body {
   border: none;
   cursor: pointer;
   outline: none;
-  background-color: rgb(17, 25, 27);
+  background-color: rgb(49, 55, 56);
   margin: 5px;
   color: #fff;
-  transition: 0.4s;
+  transition: all 0.4s ease;
   font-size: 18px;
   text-shadow: 0px 0px 4px rgb(0, 0, 0, 0.2 ) ;
   box-shadow: 0px 0px 4px rgb(0, 0, 0, 0.2 ) ;
 
 }
 .pag__list button:hover{
-  background-color: #44eeaa;
+  background-color: #fff;
 }
 .pag__list button.active{
   background-color: #44eeaa;
@@ -524,32 +524,38 @@ body {
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  background-color:#292d35;
+  background-color:#3c3f44;
   color: #fff;
   padding: 18px;
   margin: 18px;
-  border-radius: 50px;
+  border-radius: 50%;
   align-items: center;
   transition: all 0.3s ease;
 }
 .pag__btn:hover {
   transition: all 0.3s ease;
-  color: #fff;
+  color: #3c3f44;
   background-color: transparent;
-  border: 1px solid #fff;
 }
 .pag__numb {
-  line-height: 40px;
+  height: 60px;
+  width: 60px;
   text-align: center;
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  background-color:#292d35;
+  background-color:#505255;
   color: #fff;
   padding: 18px;
   margin: 10px 18px;
-  border-radius: 50px;
+  border-radius: 50%;
   align-items: center;
+  transition: all 0.3s ease;
+}
+
+.pag__numb:hover {
+  background-color: #fff;
+  color: #3c3f44;
   transition: all 0.3s ease;
 }
 
@@ -560,9 +566,8 @@ body {
 }
 .pag__icon:hover {
   transition: all 0.3s ease;
-  color: #fff;
-  background-color: transparent;
-  border: 1px solid #fff;
+  color: #3c3f44;
+  background-color:#fff;
 }
 .active {
   background-color: #fff;
@@ -580,20 +585,21 @@ body {
 .feature__form input {
   border-radius: 10px;
   padding: 12px 10px;
-  border: 1px solid #9CA3AF;
+  border: 1px solid rgb(34, 70, 230);
 }
 .feature__form select {
   background-color: #fff;
+  content:  rgb(34, 70, 230);;
   border-radius: 10px;
   padding: 12px 10px;
-  border: 1px solid #9CA3AF;
+  border: 1px solid rgb(34, 70, 230);
 }
 .feature__form button {
-  background-color: #fff;
+  background-color: rgb(34, 70, 230);
   border-radius: 10px;
   padding: 12px 10px;
   font-size: 16px;
-  color:rgb(34, 70, 230);
+  color: #fff;
   transition: all 0.3s ease;
   border: 1px solid rgb(34, 70, 230);
 }
@@ -606,5 +612,5 @@ body {
   outline: 1px solid #939796;
 }
 .feature__form input:focus {
-  outline: 1px solid #868a88;
+  outline: 1px solid rgb(34, 70, 230);
 }
