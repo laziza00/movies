@@ -41,8 +41,6 @@ for (let i=0; i<=10; i++) {
 }
 
 
-
-
 // ================== feature slider list ===============
 
 let leftBtn = document.querySelector('#left')
@@ -146,7 +144,6 @@ function heroInter() {
     herointerval = setInterval(heroRun, 3000)
 }
 
-
 // ============= modal heart offcanvas +++++===
 
 let ofcanvasModal = document.querySelector('#ofcanvasmodal')
@@ -192,7 +189,6 @@ function AddHeartModal (e) {
 }
 
 
-
 // ===================remove item offcanvas=============
 
 // console.log(offcanvas__list);
@@ -213,8 +209,6 @@ function AddHeartModal (e) {
 //   // heartArr = removeArr;
 //   AddHeartModal()
 // }
-
-
 
 
 // ============= modal see more ===================
@@ -254,8 +248,6 @@ function openModal(e) {
   }
 }
 }
-
-
 
 
 // ============= video section ===================
@@ -314,11 +306,3 @@ function videoInter() {
     clearInterval(videoInterval);
     videoInterval = setInterval(videoRun, 3000)
 }
-
-
-
-
-
-
-
-

@@ -1,6 +1,5 @@
 // =====================future search==================
 
-
 let newCategory =[]
 let featureNewList = document.querySelector('#featurenewlist')
 let formCategory = document.querySelector('#formcategory')
@@ -10,10 +9,7 @@ let searchStart = document.querySelector('#searchstart');
 let searchEnd = document.querySelector('#searchend');
 
 
-
-
 formSearchForm.addEventListener('submit', filterSearch);
-
 
 
 function filterSearch (e) {
@@ -125,10 +121,7 @@ for(let f=0; f<newCategory.length; f++) {
 }
 
 
-
-
 //============= pagination ===========
-
 
 
 let allList = document.querySelector('#alllist')
@@ -252,7 +245,6 @@ function paginationFor(page) {
  
  function WorkHeroInput (e) {
     e.preventDefault();
-  
  
      heroListSearch.innerHTML =""
  
@@ -298,5 +290,3 @@ function paginationFor(page) {
    }
  
  }
- 
- 
